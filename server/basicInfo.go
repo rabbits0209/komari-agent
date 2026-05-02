@@ -9,11 +9,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/komari-monitor/komari-agent/dnsresolver"
-	monitoring "github.com/komari-monitor/komari-agent/monitoring/unit"
-	"github.com/komari-monitor/komari-agent/update"
+	"github.com/rabbits0209/komari-agent/dnsresolver"
+	monitoring "github.com/rabbits0209/komari-agent/monitoring/unit"
+	"github.com/rabbits0209/komari-agent/update"
 
-	pkg_flags "github.com/komari-monitor/komari-agent/cmd/flags"
+	pkg_flags "github.com/rabbits0209/komari-agent/cmd/flags"
 )
 
 var flags = pkg_flags.GlobalConfig

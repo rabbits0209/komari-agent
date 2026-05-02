@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/komari-monitor/komari-agent/ws"
+	"github.com/rabbits0209/komari-agent/ws"
 	ping "github.com/prometheus-community/pro-bing"
 )
 
@@ -270,7 +270,7 @@ func NewPingTask(conn *ws.SafeConn, taskID uint, pingType, pingTarget string) {
 		"value":       pingResult,
 		"finished_at": time.Now(),
 	}
-	// https://github.com/komari-monitor/komari/commit/eb87a4fc330b7d1c407fa4ff70177615a4f50a1f
+	// https://github.com/rabbits0209/komari/commit/eb87a4fc330b7d1c407fa4ff70177615a4f50a1f
 	// -1 代表丢包，服务端计算
 	//if pingResult == -1 {
 	//	return

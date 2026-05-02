@@ -10,11 +10,11 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/komari-monitor/komari-agent/dnsresolver"
-	"github.com/komari-monitor/komari-agent/monitoring"
-	"github.com/komari-monitor/komari-agent/terminal"
-	"github.com/komari-monitor/komari-agent/utils"
-	"github.com/komari-monitor/komari-agent/ws"
+	"github.com/rabbits0209/komari-agent/dnsresolver"
+	"github.com/rabbits0209/komari-agent/monitoring"
+	"github.com/rabbits0209/komari-agent/terminal"
+	"github.com/rabbits0209/komari-agent/utils"
+	"github.com/rabbits0209/komari-agent/ws"
 )
 
 func EstablishWebSocketConnection() {

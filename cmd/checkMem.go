@@ -3,7 +3,7 @@ package cmd
 import (
 	"log"
 
-	monitoring "github.com/komari-monitor/komari-agent/monitoring/unit"
+	monitoring "github.com/rabbits0209/komari-agent/monitoring/unit"
 	"github.com/spf13/cobra"
 )
 

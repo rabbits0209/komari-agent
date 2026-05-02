@@ -13,14 +13,14 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/komari-monitor/komari-agent/dnsresolver"
-	"github.com/komari-monitor/komari-agent/monitoring/netstatic"
-	monitoring "github.com/komari-monitor/komari-agent/monitoring/unit"
-	"github.com/komari-monitor/komari-agent/server"
-	"github.com/komari-monitor/komari-agent/update"
+	"github.com/rabbits0209/komari-agent/dnsresolver"
+	"github.com/rabbits0209/komari-agent/monitoring/netstatic"
+	monitoring "github.com/rabbits0209/komari-agent/monitoring/unit"
+	"github.com/rabbits0209/komari-agent/server"
+	"github.com/rabbits0209/komari-agent/update"
 	"github.com/spf13/cobra"
 
-	pkg_flags "github.com/komari-monitor/komari-agent/cmd/flags"
+	pkg_flags "github.com/rabbits0209/komari-agent/cmd/flags"
 )
 
 var flags = pkg_flags.GlobalConfig
