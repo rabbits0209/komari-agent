@@ -90,7 +90,7 @@ if (-not $nssmCmd) {
 if (-not $nssmCmd) {
     Log-Info "nssm not found or not usable. Attempting to download to $InstallDir..."
     $NssmVersion = "2.24"
-    $NssmZipUrl = "https://nssm.cc/release/nssm-$NssmVersion.zip"
+    $NssmZipUrl = "https://github.com/HandSonic/nssm/releases/download/${NssmVersion}/nssm-${NssmVersion}.zip"
     $TempNssmZipPath = Join-Path $env:TEMP "nssm-$NssmVersion.zip"
     $TempExtractDir = Join-Path $env:TEMP "nssm_extract_temp"
 
