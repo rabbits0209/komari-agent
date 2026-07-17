@@ -13,8 +13,6 @@ import (
 	"time"
 	"unsafe"
 
-	toast "gopkg.in/toast.v1"
-
 	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 	"golang.org/x/sys/windows"
@@ -86,37 +84,9 @@ func WarnKomariRunning() {
 }
 
 // ShowToast 在用户态中执行
+// 已禁用 Toast 通知：不再弹出 "Komari is Running" 通知
 func ShowToast() {
-	title := "Komari is Running"
-	message := "The remote control software \"Komari\" is running, which allows others to control your computer. If this was not initiated by you, please terminate the program immediately."
-
-	const aumid = "Komari.Monitor.Agent"
-	const linkName = "Komari Warning (Auto Delete Later)"
-
-	if err := ensureStartMenuShortcut(aumid, linkName); err != nil {
-		log.Printf("[warn] ensureStartMenuShortcut failed: %v", err)
-	}
-
-	n := toast.Notification{
-		AppID:   aumid,
-		Title:   title,
-		Message: message,
-		Actions: []toast.Action{
-			{Type: "protocol", Label: "Help", Arguments: "https://komari-document.pages.dev/faq/uninstall.html"},
-		},
-	}
-	if err := n.Push(); err != nil {
-		log.Printf("[warn] toast push failed: %v", err)
-	}
-
-	// 等待 15 秒后删除快捷方式
-	shortcutPath := getStartMenuShortcutPath(linkName)
-	time.Sleep(15 * time.Second)
-	if err := os.Remove(shortcutPath); err != nil {
-		if !os.IsNotExist(err) {
-			log.Printf("[warn] remove shortcut failed: %v", err)
-		}
-	}
+	log.Printf("[info] toast notification suppressed, skipping")
 }
 
 // ensureStartMenuShortcut 使用 WScript.Shell 创建 .lnk 并设置 AppUserModelID
